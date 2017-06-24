@@ -4,5 +4,5 @@ rvm: 2.4
 script:
   - ./update.sh
   # upload
-  - git remote set-url origin 'https://russelltg:$GITHUBTOKEN/chigraph/chigraph.github.io'
+  - git remote set-url origin "https://russelltg:$GITHUBTOKEN@github.com/chigraph/chigraph.github.io"
   - git push
