@@ -3,7 +3,9 @@ rvm: 2.2
 cache: bundler
 
 script:
+  - git remote rm origin
+  - git remote add origin "https://russelltg:$GITHUBTOKEN@github.com/chigraph/chigraph.github.io"
+  - git fetch -all
   - ./update.sh
   # upload
-  - git remote set-url origin "https://russelltg:$GITHUBTOKEN@github.com/chigraph/chigraph.github.io"
   - git push
