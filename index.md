@@ -1,8 +1,20 @@
 ---
-# You don't need to edit this file, it's empty on purpose.
-# Edit whiteglass' home layout instead if you want to make some changes.
-# See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 layout: home
 ---
 
-Welcome to chigraph! Chigraph is a powerful visual programming language.
+Chigraph is a programming language for beginners that contains the power of a professional tool.
+
+![Demo](/assets/demo.png)
+
+Features:
+* Easy to learn visual syntax
+* Fast execution--compiled straight to LLVM bytecode
+* Fast compilation
+* Package manager
+* Library based compiler for trivial tooling
+* Cross-platform
+
+License: 
+* [Apache-2.0](https://www.apache.org/licenses/LICENSE-2.0)
+
+
