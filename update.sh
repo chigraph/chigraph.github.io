@@ -4,7 +4,7 @@ set -xe
 
 tmpdir=`mktemp -d`
 
-bundle exec jekyll build -d $tmpdir
+JEKYLL_ENV=production bundle exec jekyll build -d $tmpdir
 
 git checkout master
 
