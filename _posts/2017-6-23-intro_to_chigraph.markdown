@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Welcome to Chigraph!"
-date: 2017-6-24 15:24:20 -0700
+date: 2017-6-23 15:24:20 -0700
 catergoies: info
 ---
 
