@@ -1,1 +1,1 @@
-Sitemap: https://chigraph.io/chigraph.io/sitemap.xml
+Sitemap: https://chigraph.io/sitemap.xml
