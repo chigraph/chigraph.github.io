@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <generator uri="http://jekyllrb.com" version="3.4.3">Jekyll</generator>
+  
+  
+  <link href="https://chigraph.io/chigraph.io/feed.xml" rel="self" type="application/atom+xml" />
+  <link href="https://chigraph.io/chigraph.io/" rel="alternate" type="text/html" />
+  <updated>2017-06-24T14:41:46-06:00</updated>
+  <id>https://chigraph.io/chigraph.io//</id>
+
+  
+    <title type="html">Chigraph</title>
+  
+
+  
+    <subtitle>A simple, flowgraph-based programming language.
+</subtitle>
+  
+
+  
+
+  
+  
+    <entry>
+      
+      <title type="html">Welcome to Chigraph!</title>
+      
+      <link href="https://chigraph.io/chigraph.io/2017/04/10/welcome-to-jekyll/" rel="alternate" type="text/html" title="Welcome to Chigraph!" />
+      <published>2017-04-10T00:00:00-06:00</published>
+      <updated>2017-04-10T00:00:00-06:00</updated>
+      <id>https://chigraph.io/chigraph.io/2017/04/10/welcome-to-jekyll</id>
+      <content type="html" xml:base="https://chigraph.io/chigraph.io/2017/04/10/welcome-to-jekyll/">&lt;p&gt;Chigraph is a simple, flowgraph-based programming language implemented using LLVM.&lt;/p&gt;</content>
+
+      
+      
+      
+      
+      
+
+      
+
+      
+
+      
+
+      
+        <summary type="html">Chigraph is a simple, flowgraph-based programming language implemented using LLVM.</summary>
+      
+
+      
+      
+    </entry>
+  
+  
+</feed>
