@@ -5,6 +5,8 @@ cache: bundler
 script:
   - git remote rm origin
   - git remote add origin "https://russelltg:$GITHUBTOKEN@github.com/chigraph/chigraph.github.io"
+  - git config --global user.email 'russell@chigraph.io'
+  - git config --global user.name "Travis Bot"
   - git fetch --all
   - ./update.sh
   # upload
