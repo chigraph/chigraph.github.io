@@ -13,7 +13,6 @@ markdown: kramdown
 theme: jekyll-whiteglass
 gems:
   - jekyll-archives
-  - jekyll-paginate
   - jekyll-sitemap
 exclude:
   - vendor/
@@ -22,8 +21,6 @@ exclude:
   - update.sh
 
 permalink: /:year/:month/:day/:title/
-paginate_path: /posts/:num/
-paginate: 5
 
 jekyll-archives:
   enabled:
