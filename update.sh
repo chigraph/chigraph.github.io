@@ -12,5 +12,5 @@ rm -rf $(find . -mindepth 1 -maxdepth 1 -not -name ".git")
 
 cp -r $tmpdir/* ./
 
-git add .
+git add --all
 git commit -m "[travis-job] Update site"
