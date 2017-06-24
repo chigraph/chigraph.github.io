@@ -5,5 +5,7 @@ main:
     url: /about/
   - title: "Archives"
     url: /archives/
+  - title: "API Documentation"
+    url: https://api.chigraph.io/
   - title: "GitHub"
     url: https://github.com/chigraph/chigraph
