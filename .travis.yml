@@ -1,0 +1,8 @@
+language: ruby
+
+
+script:
+  - ./update.sh
+  # upload
+  - git remote set-url origin 'https://russelltg:$GITHUBTOKEN/chigraph/chigraph.github.io'
+  - git push
