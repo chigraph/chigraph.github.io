@@ -1,0 +1,11 @@
+.site-header {
+  background-color: #111111;
+}
+
+.site-nav .page-link {
+  color: #b5b5b5;
+}
+
+.site-title, .site-title:visited {
+  color: #d8d8d8;
+}
