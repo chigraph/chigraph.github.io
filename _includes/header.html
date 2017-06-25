@@ -2,7 +2,10 @@
 
   <div class="wrapper">
 
-    <a class="site-title" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
+    <a class="site-title" href="{{ "/" | relative_url }}">
+        <amp-img height=1.2em width=1.1em src="/assets/fish.png" style="padding: .3em; float: left; vertical-align: middle"></amp-img>
+        {{ site.title | escape }}
+    </a>
 
     <nav class="site-nav">
       {% for link in site.data.navigation.main %}

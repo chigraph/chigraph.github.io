@@ -22,6 +22,9 @@ exclude:
 
 permalink: /:year/:month/:day/:title/
 
+sass:
+    sass_dir: _sass
+
 jekyll-archives:
   enabled:
     - categories

@@ -1,8 +1,15 @@
 <head>
   <meta charset="utf-8">
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 
+  <link rel="canonical" href="{{ page.url }}" />
+
+  <style amp-custom>
+    {{ assets/main.scss | scssify }}
+  </style>
+ 
   {% assign title = page.title | default: site.title | escape %}
   {% assign canonical = page.url | replace:'index.html','' | absolute_url %}
   {% assign description = page.description | default: page.excerpt | default: site.description | strip_html | normalize_whitespace | escape %}
@@ -10,14 +17,13 @@
   <meta name="description" content="{{ description }}">
   {% if page.keywords %}<meta name="keywords" content="{{ page.keywords }}">{% endif %}
 
-  <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
-  <link rel="stylesheet" href="/assets/extra.css">
   <link rel="canonical" href="{{ canonical }}">
   {% assign feed_path = "/feed.xml" %}
   {% if site.feed and site.feed.path %}
     {% assign feed_path = site.feed.path %}
   {% endif %}
   <link rel="alternate" type="application/rss+xml" title="{{ site.title | escape }}" href="{{ feed_path | absolute_url }}">
+  <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
 
   {% include head_custom.html %}
 
