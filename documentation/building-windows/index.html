@@ -9,12 +9,12 @@
   
   
   
-  <title>Getting Started</title>
+  <title>Compiling from source (Windows)</title>
   <meta name="description" content="A simple, flowgraph-based programming language.">
   
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="https://chigraph.io/documentation/2017-6-23-getting-started/">
+  <link rel="canonical" href="https://chigraph.io/documentation/building-windows/">
   
   
   <link rel="alternate" type="application/rss+xml" title="Chigraph" href="https://chigraph.io/feed.xml">
@@ -24,7 +24,7 @@
   
   <meta name="twitter:card" content="summary">
   
-  <meta name="twitter:title" content="Getting Started">
+  <meta name="twitter:title" content="Compiling from source (Windows)">
   <meta name="twitter:description" content="A simple, flowgraph-based programming language.">
   
   
@@ -86,11 +86,37 @@
         <article class="post">
 
   <header class="post-header">
-    <h1 class="post-title">Getting Started</h1>
+    <h1 class="post-title">Compiling from source (Windows)</h1>
   </header>
 
   <div class="post-content">
-    <p>Once installed, you need to create what’s called a chigraph worksapce.</p>
+    <h2 id="installing-dependencies">Installing dependencies</h2>
+
+<p>First, Install <a href="https://www.visualstudio.com/downloads/">Visual Studio 2015</a>. 2015 is the only version that has been tested, 2013 won’t work (not new enough compiler) and I’ve been having troubles compiling LLVM with 2017.</p>
+
+<p><img src="/assets/vscustom.png" alt="Visual Studio custom install" /></p>
+
+<p>and pick Visual C++ and git:</p>
+
+<p><img src="/assets/vc++.png" alt="Visual C++" /></p>
+
+<p>Install <a href="https://cmake.org/download/">CMake</a>. I suggest you use an installer, it’s harder to screw up. Make sure to get a stable release because those are better tested (they usually put the release candidates on top). Make sure to add cmake to path for either all users or just the current one:</p>
+
+<p><img src="/assets/cmakepath.png" alt="cmake path" /></p>
+
+<p>OR</p>
+
+<p><img src="/assets/cmakepathcurrentuser.png" alt="cmake path" /></p>
+
+<p>Then, download LLVM from the <a href="https://github.com/chigraph/chigraph/releases/tag/dependencies">chigraph releases page</a> and extract it. Choose either debug or release, and take note for later.</p>
+
+<p>Finally, open up the CMake gui and point it to the source directory and a separate build directory. Create an entry for <code class="highlighter-rouge">LLVM_CONFIG</code> that points to the <code class="highlighter-rouge">llvm-config.exe</code> in the LLVM you downloaded.</p>
+
+<p>See <a href="/documentation/cmake-flags/">the documentation</a> for a full list of options.</p>
+
+<p>Configure, generate, and open the project file!</p>
+
+<p>Any errors? <a href="https://github.com/chigraph/chigraph/issues/new">File an issue!</a></p>
 
   </div>
 

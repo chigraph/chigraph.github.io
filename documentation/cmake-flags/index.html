@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  
+  
+  <title>Chigraph CMake options</title>
+  <meta name="description" content="A simple, flowgraph-based programming language.">
+  
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="https://chigraph.io/documentation/cmake-flags/">
+  
+  
+  <link rel="alternate" type="application/rss+xml" title="Chigraph" href="https://chigraph.io/feed.xml">
+
+  
+
+  
+  <meta name="twitter:card" content="summary">
+  
+  <meta name="twitter:title" content="Chigraph CMake options">
+  <meta name="twitter:description" content="A simple, flowgraph-based programming language.">
+  
+  
+
+  <script type="text/javascript">
+  WebFontConfig = {
+    google: { families: [ 'Bitter:400,700,400italic:latin' ] }
+  };
+  (function() {
+    var wf = document.createElement('script');
+    wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+      '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+    wf.type = 'text/javascript';
+    wf.async = 'true';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(wf, s);
+  })();
+</script>
+
+  
+
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">
+      <img src="/assets/fish.png" style="height: 1.2em; padding: .3em; float: left; vertical-align: middle"></img>
+      Chigraph
+    </a>
+
+    <nav class="site-nav">
+      
+        
+        <a class="page-link" href="/documentation/">Documentation</a>
+      
+        
+        <a class="page-link" href="/archives/">Blog</a>
+      
+        
+        <a class="page-link" href="https://api.chigraph.io/">API Documentation</a>
+      
+        
+        <a class="page-link" href="https://github.com/chigraph/chigraph">GitHub</a>
+      
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Chigraph CMake options</h1>
+  </header>
+
+  <div class="post-content">
+    <p><a href="https://cmake.org">CMake</a> is the meta-build-system used to compile chigraph.
+It generates files for another build system (GNU Makefiles, Visual Studio, Ninja, etc) that are used to compile your project.</p>
+
+<p>There are some notable flags you can pass to it to configure how chigraph is compiled.</p>
+
+<h2 id="basic-cmake-usage">Basic CMake usage</h2>
+<p>You usually want to run CMake in a separate directory from the chigraph source directory to make it impossible to check in build files.
+The <code class="highlighter-rouge">build</code> subdirectory is a common choice, and is already in the <code class="highlighter-rouge">.gitignore</code> file.</p>
+
+<h3 id="cmake-generators">CMake generators</h3>
+<p>Because CMake can target many different build systems, you have to tell it which to target.
+On linux and macOS, this is usually <code class="highlighter-rouge">Unix Makefiles</code> or <a href="https://ninja-build.org/"><code class="highlighter-rouge">Ninja</code></a>.
+On windows, it’s usually a Visual Studio generator. You sepcify the generator using the <code class="highlighter-rouge">-G</code> flag on the cmake commandline, or
+if you’re using the GUI then it will ask.</p>
+
+<h3 id="cmake-varaibles">CMake varaibles</h3>
+<p>You can specify variables to pass to the CMake script with the <code class="highlighter-rouge">-D</code> flag, which is how compile options are set.</p>
+
+<p><strong>Usage:</strong></p>
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code>cmake .. -G&lt;Generator&gt; <span class="o">[</span> -D&lt;Variable name&gt;<span class="o">=</span>&lt;Variable value&gt; <span class="o">]</span>
+</code></pre>
+</div>
+
+<h2 id="important-generic-cmake-flags">Important generic CMake flags</h2>
+<p>Flags that aren’t specific to chigraph but important nonetheless.</p>
+
+<ul>
+  <li><code class="highlighter-rouge">CMAKE_BUILD_TYPE</code>: Set this to <code class="highlighter-rouge">Debug</code> or <code class="highlighter-rouge">Release</code> to build in a deubg or release configuration.</li>
+  <li><code class="highlighter-rouge">CMAKE_CXX_FLAGS</code>: Extra flags to pass to the C++ compiler. Useful for passing sanitizers like <code class="highlighter-rouge">-fsanitize=address</code>.</li>
+  <li><code class="highlighter-rouge">CMAKE_INSTALL_PREFIX</code>: Where to install chigraph to</li>
+  <li><code class="highlighter-rouge">CMAKE_PREFIX_PATH</code>: Paths to find packages outside of the normal search paths.</li>
+  <li><code class="highlighter-rouge">LLVM_CONFIG</code>: Path to the <code class="highlighter-rouge">llvm-config</code> executable.</li>
+</ul>
+
+<h2 id="chigraph-specific-flags">Chigraph specific flags</h2>
+<p>Flags that are specifc to chigraph. All have</p>
+
+<ul>
+  <li><code class="highlighter-rouge">CG_BUILD_TESTS</code>: Set to <code class="highlighter-rouge">OFF</code> if you don’t want the tests built. Defaults to <code class="highlighter-rouge">ON</code>.</li>
+  <li><code class="highlighter-rouge">CG_BUILD_EXAMPLES</code>: Set to <code class="highlighter-rouge">ON</code> if you want the examples to be built. Defaults to <code class="highlighter-rouge">OFF</code>.</li>
+  <li><code class="highlighter-rouge">CG_BUILD_DEBUGGER</code>: Set to <code class="highlighter-rouge">OFF</code> if you don’t want the debugger to be built with chigraph. Useful when your LLVM install doesn’t include LLDB. Defaults to <code class="highlighter-rouge">ON</code>.</li>
+  <li><code class="highlighter-rouge">CG_USE_SYSTEM_LIBGIT2</code>: Set to <code class="highlighter-rouge">ON</code> if you want CMake to find a system libgit2 instead of the prepackaged one. Defaults to <code class="highlighter-rouge">OFF</code>.</li>
+  <li><code class="highlighter-rouge">CG_USE_SYSTEM_BOOST</code>: Set to <code class="highlighter-rouge">ON</code> if you want CMake to find the system boost install instead of the prepackaged install. Defaults to <code class="highlighter-rouge">OFF</code>.</li>
+</ul>
+
+  </div>
+
+</article>
+
+      </div>
+    </main>
+    
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <p>
+      
+
+&copy;  - Powered by <a href="https://jekyllrb.com">Jekyll</a> &amp; <a href="https://github.com/yous/whiteglass">whiteglass</a> - Subscribe via <a href="https://chigraph.io/feed.xml">RSS</a>
+
+    </p>
+
+  </div>
+
+</footer>
+
+    
+    
+    
+      <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-101634364-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+    
+  </body>
+  
+</html>

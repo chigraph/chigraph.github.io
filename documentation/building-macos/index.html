@@ -9,12 +9,12 @@
   
   
   
-  <title>Getting Started</title>
+  <title>Compiling from source (macOS)</title>
   <meta name="description" content="A simple, flowgraph-based programming language.">
   
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="https://chigraph.io/documentation/2017-6-23-getting-started/">
+  <link rel="canonical" href="https://chigraph.io/documentation/building-macos/">
   
   
   <link rel="alternate" type="application/rss+xml" title="Chigraph" href="https://chigraph.io/feed.xml">
@@ -24,7 +24,7 @@
   
   <meta name="twitter:card" content="summary">
   
-  <meta name="twitter:title" content="Getting Started">
+  <meta name="twitter:title" content="Compiling from source (macOS)">
   <meta name="twitter:description" content="A simple, flowgraph-based programming language.">
   
   
@@ -86,11 +86,49 @@
         <article class="post">
 
   <header class="post-header">
-    <h1 class="post-title">Getting Started</h1>
+    <h1 class="post-title">Compiling from source (macOS)</h1>
   </header>
 
   <div class="post-content">
-    <p>Once installed, you need to create what’s called a chigraph worksapce.</p>
+    <h2 id="known-problems">Known problems:</h2>
+<p>Brew currently doesn’t package lldb because it requires code signing. Either compile LLVM with lldb yourself or don’t build it with debugging support by passing <code class="highlighter-rouge">-DCG_BUILD_DEBUGGER=OFF</code>.</p>
+
+<h2 id="installing-dependencies">Installing dependencies</h2>
+
+<h3 id="xcode">Xcode</h3>
+<p>Xcode must be installed. You can install it from the app store. Versions 7.3+ are tested.</p>
+
+<h3 id="brew">Brew</h3>
+
+<p><a href="http://brew.sh">install brew</a> if you haven’t already.</p>
+
+<p>Then, it’s as easy as:</p>
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code>brew install cmake llvm
+</code></pre>
+</div>
+
+<h2 id="compiling-chigraph">Compiling chigraph</h2>
+
+<p>Clone chigraph…</p>
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code>git clone https://github.com/chigraph/chigraph
+<span class="nb">cd </span>chigraph
+</code></pre>
+</div>
+
+<p>Then configure and install it:</p>
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code>mkdir build <span class="o">&amp;&amp;</span> <span class="nb">cd </span>build
+cmake .. <span class="se">\</span>
+    -DCMAKE_PREFIX_PATH<span class="o">=</span><span class="s1">'/usr/local/opt/qt5/;/usr/local/opt/gettext'</span> <span class="se">\</span>
+    -DCMAKE_BUILD_TYPE<span class="o">=</span>Debug <span class="se">\</span>
+    -DLLVM_CONFIG<span class="o">=</span>/usr/local/opt/llvm/bin/llvm-config <span class="se">\</span>
+    -DCG_BUILD_DEBUGGER<span class="o">=</span>OFF
+make
+</code></pre>
+</div>
+
+<p>See <a href="/documentation/cmake-flags/">the documentation</a> for a full list of CMake options.</p>
+
+<p>Any errors? <a href="https://github.com/chigraph/chigraph/issues/new">File an issue!</a></p>
 
   </div>
 
