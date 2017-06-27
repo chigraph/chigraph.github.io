@@ -20,6 +20,9 @@ exclude:
   - Gemfile.lock
   - update.sh
 
+sass:
+  sass_dir: _sass
+
 permalink: /:year/:month/:day/:title/
 
 jekyll-archives:

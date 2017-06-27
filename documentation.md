@@ -7,14 +7,18 @@ permalink: /documentation/
 
 Documentation for chigraph!
 
-<ul>
-  {% for page in site.pages %}
-    {% for pc in page.categories %}
-      {% if pc == 'documentation' %}
-        <li><a href="{{ page.url }}">{{ page.title }}</a></li>
-      {% endif %}   <!-- cat-match-p -->
-    {% endfor %}  <!-- page-category -->
-  {% endfor %}  <!-- page -->
-</ul>
+Technical Documentation:
+* [Compiling from source (Linux)](/documentation/building-linux/)
+* [Compiling from source (Windows)](/documentation/building-windows/)
+* [Compiling from source (macOS)](/documentation/building-macos/)
+* [Chigraph CMake options](/documentation/cmake-flags/)
 
+List of all documentation:
 
+{% for page in site.pages %}
+  {% for pc in page.categories %}
+    {% if pc == 'documentation' %}
+* [{{ page.title }}]({{ page.url }})
+    {% endif %}
+  {% endfor %}
+{% endfor %}
