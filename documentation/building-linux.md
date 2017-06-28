@@ -68,9 +68,12 @@ Then, you can compile it!
 cmake --build .
 ```
 
-To test that everything is sane and working, it's a good idea to quickly run the tests (it only takes a few seconds)
+To test that everything is sane and working, it's a good idea to quickly run the tests (it takes a minute or two)
 ```bash
 cmake --build . --target test
 ```
+
+## Other resources
+You can look at the [Travis CI build scripts](https://github.com/chigraph/chigraph/blob/master/.travis.yml) for a script that builds chigraph.
 
 Any errors? [File an issue!](https://github.com/chigraph/chigraph/issues/new)

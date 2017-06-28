@@ -42,5 +42,7 @@ make
 
 See [the documentation](/documentation/cmake-flags/) for a full list of CMake options.
 
+## Other resources
+You can look at the [Travis CI build scripts](https://github.com/chigraph/chigraph/blob/master/.travis.yml) for a script that builds chigraph.
 
 Any errors? [File an issue!](https://github.com/chigraph/chigraph/issues/new)
