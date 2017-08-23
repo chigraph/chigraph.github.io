@@ -23,7 +23,7 @@ exclude:
 sass:
   sass_dir: _sass
 
-permalink: /:year/:month/:day/:title/
+permalink: /:categories/:title/
 
 jekyll-archives:
   enabled:
