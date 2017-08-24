@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-<loc>https://chigraph.io/2017/06/23/intro_to_chigraph/</loc>
+<loc>https://chigraph.io/intro_to_chigraph/</loc>
 <lastmod>2017-06-23T21:24:20+00:00</lastmod>
 </url>
 <url>
@@ -29,7 +29,13 @@
 <loc>https://chigraph.io/</loc>
 </url>
 <url>
+<loc>https://chigraph.io/documentation/modules/</loc>
+</url>
+<url>
+<loc>https://chigraph.io/documentation/workspaces/</loc>
+</url>
+<url>
 <loc>https://chigraph.io/index.html</loc>
-<lastmod>2017-08-23T04:22:13+00:00</lastmod>
+<lastmod>2017-08-24T01:39:47+00:00</lastmod>
 </url>
 </urlset>

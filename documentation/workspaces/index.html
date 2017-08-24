@@ -9,12 +9,12 @@
   
   
   
-  <title>Documentation</title>
+  <title>Workspaces</title>
   <meta name="description" content="A simple, flowgraph-based programming language.">
   
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="https://chigraph.io/documentation/">
+  <link rel="canonical" href="https://chigraph.io/documentation/workspaces/">
   
   
   <link rel="alternate" type="application/rss+xml" title="Chigraph" href="https://chigraph.io/feed.xml">
@@ -24,7 +24,7 @@
   
   <meta name="twitter:card" content="summary">
   
-  <meta name="twitter:title" content="Documentation">
+  <meta name="twitter:title" content="Workspaces">
   <meta name="twitter:description" content="A simple, flowgraph-based programming language.">
   
   
@@ -86,45 +86,31 @@
         <article class="post">
 
   <header class="post-header">
-    <h1 class="post-title">Documentation</h1>
+    <h1 class="post-title">Workspaces</h1>
   </header>
 
   <div class="post-content">
-    <p>Documentation for chigraph!</p>
+    <p>Chigraph code is organized into what’s called a “workspace”. If you’ve ever written anything in <a href="https://golang.org/">golang</a>, it’s similar (actually inspired by that).</p>
 
-<p>Technical Documentation:</p>
-<ul>
-  <li><a href="/documentation/building-linux/">Compiling from source (Linux)</a></li>
-  <li><a href="/documentation/building-windows/">Compiling from source (Windows)</a></li>
-  <li><a href="/documentation/building-macos/">Compiling from source (macOS)</a></li>
-  <li><a href="/documentation/cmake-flags/">Chigraph CMake options</a></li>
-</ul>
+<p>The purpose of a workspace is to hold a hiearchy of <a href="/documentation/modules">modules</a> to be used to compile chigraph programs. Your workspace should contain all chigraph modules that are dependencies for what you are building.</p>
 
-<p>List of all documentation:</p>
+<h2 id="basic-structure">Basic structure</h2>
 
-<ul>
-  <li>
-    <p><a href="/documentation/2017-6-23-getting-started/">Getting Started</a></p>
-  </li>
-  <li>
-    <p><a href="/documentation/building-linux/">Compiling from source (Linux)</a></p>
-  </li>
-  <li>
-    <p><a href="/documentation/building-macos/">Compiling from source (macOS)</a></p>
-  </li>
-  <li>
-    <p><a href="/documentation/building-windows/">Compiling from source (Windows)</a></p>
-  </li>
-  <li>
-    <p><a href="/documentation/cmake-flags/">Chigraph CMake options</a></p>
-  </li>
-  <li>
-    <p><a href="/documentation/modules/">Modules</a></p>
-  </li>
-  <li>
-    <p><a href="/documentation/workspaces/">Workspaces</a></p>
-  </li>
-</ul>
+<p>This is a small sample of the test workspace (located in <a href="https://github.com/chigraph/chigraph/tree/master/test/codegen/workspace"><code class="highlighter-rouge">test/codegen/workspace</code></a>)</p>
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code>.
+├── .chigraphworkspace <span class="c"># empty file denoting the root of the workspace</span>
+├── lib <span class="c"># holds cached compiled .bc files for your modules</span>
+└── src <span class="c"># holds chigraph modules</span>
+    ├── addint <span class="c"># folder containing modules for easier organization</span>
+    │   └── main.chimod <span class="c"># a main module, meaning an executable</span>
+    ├── intermodule
+    │   ├── main.chimod
+    │   └── printer.chimod <span class="c"># a library module</span>
+    └── intprinter.chimod <span class="c"># another library module</span>
+</code></pre>
+</div>
+
+<p>Modules are named by the path to their <code class="highlighter-rouge">.chimod</code> file from the <code class="highlighter-rouge">src</code> folder. For example, the <code class="highlighter-rouge">printer.chimod</code> file would have the name of <code class="highlighter-rouge">intermodule/printer</code>, and the <code class="highlighter-rouge">intpritner.chimod</code> module would have the name <code class="highlighter-rouge">intprinter</code>. This is what you would enter as a dependency.</p>
 
 
   </div>

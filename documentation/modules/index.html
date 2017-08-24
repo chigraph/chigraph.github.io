@@ -9,12 +9,12 @@
   
   
   
-  <title>Welcome to Chigraph!</title>
-  <meta name="description" content="Chigraph is a basic visual programming language compile with LLVM.">
+  <title>Modules</title>
+  <meta name="description" content="A simple, flowgraph-based programming language.">
   
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="https://chigraph.io/2017/06/23/intro_to_chigraph/">
+  <link rel="canonical" href="https://chigraph.io/documentation/modules/">
   
   
   <link rel="alternate" type="application/rss+xml" title="Chigraph" href="https://chigraph.io/feed.xml">
@@ -24,8 +24,8 @@
   
   <meta name="twitter:card" content="summary">
   
-  <meta name="twitter:title" content="Welcome to Chigraph!">
-  <meta name="twitter:description" content="Chigraph is a basic visual programming language compile with LLVM.">
+  <meta name="twitter:title" content="Modules">
+  <meta name="twitter:description" content="A simple, flowgraph-based programming language.">
   
   
 
@@ -83,17 +83,24 @@
 
     <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+        <article class="post">
 
   <header class="post-header">
-    
-      <h1 class="post-title" itemprop="name headline">Welcome to Chigraph!</h1>
-    
-    <p class="post-meta"><time datetime="2017-06-23T21:24:20+00:00" itemprop="datePublished">Jun 23, 2017</time></p>
+    <h1 class="post-title">Modules</h1>
   </header>
 
-  <div class="post-content" itemprop="articleBody">
-    <p>Chigraph is a basic visual programming language compile with LLVM.</p>
+  <div class="post-content">
+    <p>A module, at the most basic level, is a collection of functions and structures.</p>
+
+<h2 id="main-modules">Main Modules</h2>
+<p>Modules who have the name <code class="highlighter-rouge">*/main</code> (no matter what comes before it, so <code class="highlighter-rouge">addint/main</code> as well as  just <code class="highlighter-rouge">main</code> both qualify) are main modules. This means they can be executed if you add a <code class="highlighter-rouge">main</code> function to them.</p>
+
+<p>If you’re familiar with other programming languages, it’s like having a <code class="highlighter-rouge">main</code> module in golang or (roughly) a <code class="highlighter-rouge">.cpp</code> file with a <code class="highlighter-rouge">main</code> method in C++ (or <code class="highlighter-rouge">.c</code> in C).</p>
+
+<h2 id="libraries">Libraries</h2>
+
+<p>Libraries are disbributed in the foramt of a <code class="highlighter-rouge">&lt;library-name&gt;.chimod</code> file, including the standard library. The standard library (which is in active development), is under the <code class="highlighter-rouge">std/</code> directory in the src tree of your workspace.</p>
+
 
   </div>
 
@@ -103,20 +110,9 @@
     </main>
     
 
-    <footer class="site-footer">
+    
+If there are any errors, questions, or ambiguities on this page, feel free to file an issue on <a class='wrapper' href='[https://github.com/chigraph/chigraph.github.io/issues'>our github issues page</a>
 
-  <div class="wrapper">
-
-    <p>
-      
-
-&copy;  - Powered by <a href="https://jekyllrb.com">Jekyll</a> &amp; <a href="https://github.com/yous/whiteglass">whiteglass</a> - Subscribe via <a href="https://chigraph.io/feed.xml">RSS</a>
-
-    </p>
-
-  </div>
-
-</footer>
 
     
     
