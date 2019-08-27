@@ -2,7 +2,7 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>https://chigraph.io/intro_to_chigraph/</loc>
-<lastmod>2017-06-23T21:24:20+00:00</lastmod>
+<lastmod>2017-06-23T17:24:20-04:00</lastmod>
 </url>
 <url>
 <loc>https://chigraph.io/documentation/2017-6-23-getting-started/</loc>
@@ -36,6 +36,6 @@
 </url>
 <url>
 <loc>https://chigraph.io/index.html</loc>
-<lastmod>2018-02-04T04:56:23+00:00</lastmod>
+<lastmod>2019-08-27T18:23:18-04:00</lastmod>
 </url>
 </urlset>
